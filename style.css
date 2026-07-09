@@ -1,9 +1,1100 @@
-body{margin:0;font-family:Arial,sans-serif;background:#f4f7fb;color:#222;line-height:1.7}
-.container{width:min(1100px,92%);margin:auto}
-header{background:#0101CF;color:#fff;padding:18px 0}
-header .container{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap}
-nav a{color:#fff;text-decoration:none;margin-left:18px;font-weight:bold}
-.hero{padding:70px 0;text-align:center}
-section{background:#fff;margin:28px 0;padding:28px;border-radius:10px;box-shadow:0 3px 10px rgba(0,0,0,.08)}
-footer{background:#111827;color:#fff;padding:24px 0;margin-top:40px;text-align:center}
-@media(max-width:700px){header .container{flex-direction:column}nav a{display:inline-block;margin:10px}}
+/*======================================================
+BLOCK BLAST GUIDE
+Premium Stylesheet
+Part 1
+======================================================*/
+
+/* Reset */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* Variables */
+
+:root{
+
+    --primary:#0101CF;
+    --secondary:#FFCC00;
+
+    --dark:#111827;
+
+    --light:#F5F7FB;
+
+    --white:#FFFFFF;
+
+    --text:#374151;
+
+    --border:#E5E7EB;
+
+    --shadow:0 12px 35px rgba(0,0,0,.08);
+
+    --radius:16px;
+
+}
+
+/* Base */
+
+html{
+
+scroll-behavior:smooth;
+
+}
+
+body{
+
+font-family:Arial,Helvetica,sans-serif;
+
+background:var(--light);
+
+color:var(--text);
+
+line-height:1.8;
+
+font-size:18px;
+
+}
+
+/* Container */
+
+.container{
+
+width:92%;
+
+max-width:1200px;
+
+margin:auto;
+
+}
+
+/* Links */
+
+a{
+
+text-decoration:none;
+
+transition:.3s;
+
+}
+
+/* Images */
+
+img{
+
+max-width:100%;
+
+display:block;
+
+}
+
+/* Lists */
+
+ul{
+
+list-style:none;
+
+}
+
+/*======================================================
+
+HEADER
+
+======================================================*/
+
+header{
+
+position:sticky;
+
+top:0;
+
+z-index:999;
+
+background:rgba(1,1,207,.95);
+
+backdrop-filter:blur(12px);
+
+box-shadow:0 5px 20px rgba(0,0,0,.15);
+
+}
+
+header .container{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:18px 0;
+
+}
+
+/* Logo */
+
+.logo h1{
+
+color:#fff;
+
+font-size:30px;
+
+font-weight:700;
+
+letter-spacing:.5px;
+
+}
+
+/* Navigation */
+
+nav ul{
+
+display:flex;
+
+gap:35px;
+
+align-items:center;
+
+}
+
+nav a{
+
+color:#fff;
+
+font-weight:600;
+
+font-size:16px;
+
+position:relative;
+
+padding-bottom:6px;
+
+}
+
+nav a:hover{
+
+color:var(--secondary);
+
+}
+
+/* Underline Animation */
+
+nav a::after{
+
+content:"";
+
+position:absolute;
+
+left:0;
+
+bottom:0;
+
+width:0;
+
+height:2px;
+
+background:var(--secondary);
+
+transition:.3s;
+
+}
+
+nav a:hover::after{
+
+width:100%;
+
+}
+
+/*======================================================
+
+HERO
+
+======================================================*/
+
+.hero{
+
+padding:120px 0;
+
+background:
+
+linear-gradient(
+
+135deg,
+
+#0101CF,
+
+#2937ff
+
+);
+
+text-align:center;
+
+color:white;
+
+}
+
+.badge{
+
+display:inline-block;
+
+padding:10px 20px;
+
+border-radius:50px;
+
+background:rgba(255,255,255,.15);
+
+border:1px solid rgba(255,255,255,.25);
+
+margin-bottom:30px;
+
+font-size:15px;
+
+}
+
+.hero h2{
+
+font-size:60px;
+
+line-height:1.2;
+
+margin-bottom:25px;
+
+}
+
+.hero p{
+
+max-width:820px;
+
+margin:auto;
+
+font-size:22px;
+
+opacity:.95;
+
+}
+
+.hero-buttons{
+
+margin-top:45px;
+
+display:flex;
+
+justify-content:center;
+
+gap:20px;
+
+flex-wrap:wrap;
+
+}
+
+.primary-btn{
+
+background:white;
+
+color:var(--primary);
+
+padding:18px 38px;
+
+border-radius:12px;
+
+font-weight:bold;
+
+box-shadow:var(--shadow);
+
+}
+
+.primary-btn:hover{
+
+transform:translateY(-4px);
+
+}
+
+.secondary-btn{
+
+border:2px solid white;
+
+padding:18px 38px;
+
+border-radius:12px;
+
+color:white;
+
+font-weight:bold;
+
+}
+
+.secondary-btn:hover{
+
+background:white;
+
+color:var(--primary);
+
+}
+
+/*======================================================
+
+INTRO
+
+======================================================*/
+
+.intro{
+
+padding:90px 0;
+
+background:white;
+
+}
+
+.intro h2{
+
+font-size:42px;
+
+margin-bottom:25px;
+
+color:var(--primary);
+
+}
+
+.intro p{
+
+margin-bottom:20px;
+
+}
+
+/*======================================================
+
+FEATURES
+
+======================================================*/
+
+.features{
+
+padding:90px 0;
+
+}
+
+.features .container{
+
+display:grid;
+
+grid-template-columns:
+
+repeat(auto-fit,minmax(320px,1fr));
+
+gap:35px;
+
+}
+
+.card{
+
+background:white;
+
+padding:40px;
+
+border-radius:var(--radius);
+
+box-shadow:var(--shadow);
+
+transition:.35s;
+
+border:1px solid var(--border);
+
+}
+
+.card:hover{
+
+transform:translateY(-10px);
+
+}
+
+.card h3{
+
+font-size:28px;
+
+margin-bottom:18px;
+
+color:var(--primary);
+
+}
+
+.card p{
+
+font-size:17px;
+
+}
+/*======================================================
+GAMEPLAY
+======================================================*/
+
+.gameplay{
+    padding:90px 0;
+    background:#ffffff;
+}
+
+.gameplay h2{
+    font-size:42px;
+    color:var(--primary);
+    margin-bottom:25px;
+}
+
+.gameplay p{
+    margin-bottom:20px;
+    max-width:900px;
+}
+
+/*======================================================
+WINNING STRATEGIES
+======================================================*/
+
+.tips{
+    padding:90px 0;
+    background:var(--light);
+}
+
+.tips h2{
+    font-size:42px;
+    color:var(--primary);
+    margin-bottom:45px;
+    text-align:center;
+}
+
+.tips-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(260px,1fr));
+
+    gap:30px;
+
+}
+
+.tip-box{
+
+    background:white;
+
+    padding:35px;
+
+    border-radius:var(--radius);
+
+    box-shadow:var(--shadow);
+
+    transition:.35s;
+
+    border:1px solid var(--border);
+
+}
+
+.tip-box:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.tip-box h3{
+
+    color:var(--primary);
+
+    margin-bottom:15px;
+
+    font-size:24px;
+
+}
+
+/*======================================================
+COMMON MISTAKES
+======================================================*/
+
+.mistakes{
+
+    padding:90px 0;
+
+    background:white;
+
+}
+
+.mistakes h2{
+
+    color:var(--primary);
+
+    font-size:42px;
+
+    margin-bottom:30px;
+
+}
+
+.mistakes ul{
+
+    list-style:disc;
+
+    padding-left:30px;
+
+}
+
+.mistakes li{
+
+    margin-bottom:15px;
+
+    font-size:18px;
+
+}
+
+/*======================================================
+PLATFORMS
+======================================================*/
+
+.platforms{
+
+    padding:90px 0;
+
+    background:var(--light);
+
+}
+
+.platforms h2{
+
+    text-align:center;
+
+    color:var(--primary);
+
+    font-size:42px;
+
+    margin-bottom:50px;
+
+}
+
+.platform-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+
+    gap:30px;
+
+}
+
+.platform-card{
+
+    background:white;
+
+    padding:35px;
+
+    border-radius:var(--radius);
+
+    box-shadow:var(--shadow);
+
+    transition:.35s;
+
+    border:1px solid var(--border);
+
+}
+
+.platform-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.platform-card h3{
+
+    color:var(--primary);
+
+    margin-bottom:18px;
+
+    font-size:26px;
+
+}
+
+/*======================================================
+FAQ PREVIEW
+======================================================*/
+
+.faq-preview{
+
+    padding:90px 0;
+
+    background:white;
+
+}
+
+.faq-preview h2{
+
+    text-align:center;
+
+    color:var(--primary);
+
+    font-size:42px;
+
+    margin-bottom:45px;
+
+}
+
+.faq-preview h3{
+
+    margin-top:35px;
+
+    color:var(--primary);
+
+    font-size:24px;
+
+}
+
+.faq-preview p{
+
+    margin-top:12px;
+
+}
+
+.faq-preview a{
+
+    color:var(--primary);
+
+    font-weight:bold;
+
+}
+
+.faq-preview a:hover{
+
+    color:var(--secondary);
+
+}
+
+/*======================================================
+FOOTER
+======================================================*/
+
+footer{
+
+    background:var(--dark);
+
+    color:white;
+
+    padding:60px 0;
+
+    text-align:center;
+
+}
+
+footer p{
+
+    margin-bottom:15px;
+
+}
+
+footer a{
+
+    color:var(--secondary);
+
+    font-weight:bold;
+
+}
+
+footer a:hover{
+
+    color:white;
+
+}
+
+/*======================================================
+TABLETS
+======================================================*/
+
+@media(max-width:992px){
+
+.hero h2{
+
+    font-size:46px;
+
+}
+
+.intro h2,
+.gameplay h2,
+.tips h2,
+.platforms h2,
+.faq-preview h2,
+.mistakes h2{
+
+    font-size:36px;
+
+}
+
+}
+
+/*======================================================
+MOBILE
+======================================================*/
+
+@media(max-width:768px){
+
+header .container{
+
+    flex-direction:column;
+
+}
+
+.logo{
+
+    margin-bottom:18px;
+
+}
+
+nav ul{
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+.hero{
+
+    padding:90px 0;
+
+}
+
+.hero h2{
+
+    font-size:34px;
+
+}
+
+.hero p{
+
+    font-size:18px;
+
+}
+
+.primary-btn,
+.secondary-btn{
+
+    width:100%;
+
+    text-align:center;
+
+}
+
+.features .container,
+.platform-grid,
+.tips-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.card,
+.tip-box,
+.platform-card{
+
+    padding:28px;
+
+}
+
+.intro,
+.features,
+.gameplay,
+.tips,
+.platforms,
+.mistakes,
+.faq-preview{
+
+    padding:70px 0;
+
+}
+
+}
+
+/*======================================================
+SMALL PHONES
+======================================================*/
+
+@media(max-width:480px){
+
+.hero h2{
+
+    font-size:28px;
+
+}
+
+.badge{
+
+    font-size:13px;
+
+}
+
+body{
+
+    font-size:16px;
+
+}
+
+}
+/*======================================================
+PREMIUM ENHANCEMENTS - PART 3
+======================================================*/
+
+/* Smooth transitions */
+
+section,
+.card,
+.tip-box,
+.platform-card,
+.primary-btn,
+.secondary-btn,
+nav a{
+    transition:all .35s ease;
+}
+
+/* Better heading spacing */
+
+h1,h2,h3{
+    line-height:1.25;
+}
+
+p{
+    margin-bottom:18px;
+}
+
+/* Better card hover */
+
+.card:hover,
+.tip-box:hover,
+.platform-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 18px 45px rgba(0,0,0,.15);
+}
+
+/* Section spacing */
+
+section{
+    position:relative;
+}
+
+section:nth-child(even){
+    background:#ffffff;
+}
+
+section:nth-child(odd){
+    background:#f8f9fc;
+}
+
+/* Nice text selection */
+
+::selection{
+    background:#0101CF;
+    color:#ffffff;
+}
+
+/* Scroll offset for sticky navigation */
+
+html{
+    scroll-padding-top:90px;
+}
+
+/* Button effects */
+
+.primary-btn,
+.secondary-btn{
+    cursor:pointer;
+}
+
+.primary-btn:hover{
+    transform:translateY(-3px) scale(1.03);
+}
+
+.secondary-btn:hover{
+    transform:translateY(-3px);
+}
+
+/* Better footer */
+
+footer{
+    border-top:4px solid #FFCC00;
+}
+
+footer p:last-child{
+    margin-bottom:0;
+}
+
+/* Better list spacing */
+
+.mistakes li{
+    padding-left:6px;
+}
+
+/* Keyboard accessibility */
+
+a:focus,
+button:focus{
+    outline:3px solid #FFCC00;
+    outline-offset:3px;
+}
+
+/* Simple fade animation */
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(20px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+.hero,
+.intro,
+.features,
+.gameplay,
+.tips,
+.mistakes,
+.platforms,
+.faq-preview{
+
+animation:fadeUp .7s ease;
+
+}
+
+/* Horizontal rule */
+
+.divider{
+
+width:90px;
+
+height:4px;
+
+background:#FFCC00;
+
+margin:30px auto;
+
+border-radius:20px;
+
+}
+
+/* Responsive improvements */
+
+@media (max-width:768px){
+
+.container{
+
+width:94%;
+
+}
+
+.hero{
+
+padding:70px 0;
+
+}
+
+.hero-buttons{
+
+flex-direction:column;
+
+}
+
+nav{
+
+width:100%;
+
+}
+
+nav ul{
+
+width:100%;
+
+}
+
+nav li{
+
+width:100%;
+
+text-align:center;
+
+}
+
+}
+
+/* Print stylesheet */
+
+@media print{
+
+header,
+footer,
+.hero-buttons{
+
+display:none;
+
+}
+
+body{
+
+background:white;
+
+color:black;
+
+}
+
+section{
+
+box-shadow:none;
+
+}
+
+}
+
+/* Dark mode support */
+
+@media (prefers-color-scheme: dark){
+
+body{
+
+background:#0f172a;
+
+color:#e5e7eb;
+
+}
+
+.intro,
+.gameplay,
+.mistakes,
+.faq-preview,
+.card,
+.tip-box,
+.platform-card{
+
+background:#1e293b;
+
+color:#e5e7eb;
+
+}
+
+section:nth-child(odd){
+
+background:#111827;
+
+}
+
+section:nth-child(even){
+
+background:#0f172a;
+
+}
+
+footer{
+
+background:#020617;
+
+}
+
+}
